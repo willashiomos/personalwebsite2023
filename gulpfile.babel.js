@@ -6,6 +6,7 @@ import { hideBin } from 'yargs/helpers'
 import gulpif from 'gulp-if';
 import {deleteAsync} from 'del';
 import rename from 'gulp-rename';
+import deploy from 'gulp-gh-pages';
 
 // CSS/SASS
 import dartSass from 'sass';
@@ -36,7 +37,7 @@ import browserSync from "browser-sync";
 
 const PRODUCTION = yargs(hideBin(process.argv)).argv.prod;
 const srcDir = `./src/`;
-const distDir = `./site/`;
+const distDir = `./dist/`;
 
 
 
@@ -144,7 +145,7 @@ export const scripts = () => {
 export const serve = done => {
   browserSync.init({
     server: {
-      baseDir: `site`,
+      baseDir: `dist`,
       index: `index.html`
     },
     notify: {
@@ -170,6 +171,14 @@ export const reload = done => {
   browserSync.reload();
   done();
 };
+
+/**
+ * Push build to gh-pages
+ */
+pkg.task('deploy', function () {
+  return pkg.src("./dist/**/*")
+    .pipe(deploy())
+});
 
 /**
  * Watch
