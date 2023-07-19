@@ -173,18 +173,10 @@ export const reload = done => {
 };
 
 /**
- * Push build to gh-pages
- */
-pkg.task('deploy', function () {
-  return pkg.src("./dist/**/*")
-    .pipe(deploy())
-});
-
-/**
  * Watch
  */
 export const watchForChanges = () => {
-  watch(`${srcDir}{css,inc}/**/*.scss`, styles);
+  watch(`${srcDir}{css,inc}/*.scss`, styles);
   watch(`${srcDir}img/**/*.{jpg,jpeg,png,svg,gif}`, series(images, htmlrender, reload));
   watch(`${srcDir}{js,inc}/**/*.js`, series(scripts, reload));
   watch(`${srcDir}**/*.html`, series(images, htmlrender, reload));

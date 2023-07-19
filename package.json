@@ -47,6 +47,7 @@
   "dependencies": {
     "aos": "^2.3.4",
     "bootstrap": "^5.0.2",
-    "node-fetch": "^2.6.8"
+    "node-fetch": "^2.6.8",
+    "postcss": "^8.4.26"
   }
 }
