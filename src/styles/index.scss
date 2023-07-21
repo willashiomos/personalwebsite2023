@@ -140,6 +140,7 @@ a {
   }
 
   .work {
+    min-width: 400px;
     &__title {
       font-size: 36px;
       padding-bottom: 40px;
@@ -169,6 +170,77 @@ a {
     }
     img {
       padding: 0 15px;
+    }
+  }
+
+  .main-content {
+    display: flex;
+  }
+
+  .images {
+    position: relative;
+    width: -webkit-fill-available;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    img {
+      position: absolute;
+
+      // *
+      &:nth-child(1) {
+        top: -40px;
+        left: 20px;
+      }
+      // #
+      &:nth-child(2) {
+        top: -50px;
+        left: 50%;
+      }
+      // 4 point star
+      &:nth-child(3) {
+        top: -100px;
+        left: 80%;
+      }
+      // Star
+      &:nth-child(4) {
+        top: 80px;
+        left: 40px;
+      }
+      // Heart
+      &:nth-child(5) {
+        top: 90px;
+        left: 60%;
+      }
+      // Arrow
+      &:nth-child(6) {
+        top: 230px;
+        left: 40%;
+      }
+      // Lightning
+      &:nth-child(7) {
+        top: 300px;
+        left: 20px;
+      }
+      // Cloud
+      &:nth-child(8) {
+        top: 370px;
+        left: 20%;
+      }
+      // &
+      &:nth-child(9) {
+        top: 350px;
+        left: 70%;
+      }
+      // Spiral
+      &:nth-child(10) {
+        top: 300px;
+        left: 87%;
+      }
+      // Eye
+      &:nth-child(11) {
+        top: 575px;
+        left: 20px;
+      }
     }
   }
 }
