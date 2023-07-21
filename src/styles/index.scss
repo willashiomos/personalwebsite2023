@@ -2,6 +2,7 @@
 * VARS
 * -------------------------------------------- */
 $color-green: #347033;
+$color-purple: #7563a9;
 
 /* --------------------------------------------
 * --media queries
@@ -66,22 +67,22 @@ $page-max-width: 1740px;
 body {
   background: linear-gradient(212deg, #fff 0%, #f1eded 100%);
   color: $color-green;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 body,
 p,
 ul,
 main {
-  font-family: "Helvetica Neue", sans-serif
-  ;
+  font-family: "Helvetica Neue", sans-serif;
   font-weight: normal;
-  line-height: 1.4;
+  line-height: 1.2;
 }
 
 html {
   scroll-behavior: smooth;
   position: relative;
+  min-height: 100%;
 
   body {
     position: relative;
@@ -89,7 +90,9 @@ html {
   }
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -100,33 +103,72 @@ body > .container {
 }
 
 .container {
-	margin: 0 auto;
+  margin: 0 auto;
   position: relative;
   z-index: 2;
   width: 100%;
   max-width: $page-max-width;
-  padding: 0 10%;
-
-  @include break-min(1800px) {
-    padding: 0;
-  }
-  @include break-max($page-max-width - 200px) {
-    padding: 0 5%;
-    
-  }
-  @include break-max($content-max-width + 40px) {
-    padding: 0 20px;
-    max-width: $content-max-width + 40px;
-  }
-  &-medium {
-    @include break-max($break-lg) {
-      max-width: 720px;
-    }
-  }
+  padding: 50px 100px;
 }
 
+a {
+  color: $color-green;
+  text-decoration: none;
+  border-bottom: 2px solid $color-green;
+  transition: all 0.3s;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    color: $color-purple;
+    border-color: $color-purple;
+  }
 
+  &.lovelace {
+    border-bottom: none;
+  }
+}
 
 /* --------------------------------------------
 * MAIN STYLES
 * -------------------------------------------- */
+
+.container {
+  .intro {
+    font-size: 40px;
+    font-weight: normal;
+    padding-bottom: 120px;
+  }
+
+  .work {
+    &__title {
+      font-size: 36px;
+      padding-bottom: 40px;
+    }
+
+    &__item {
+      display: flex;
+      padding-bottom: 50px;
+      &__name {
+        margin-right: 20px;
+      }
+      &__year {
+        font-size: 16px;
+        align-self: flex-end;
+        padding-bottom: 5px;
+      }
+    }
+  }
+
+  .footer {
+    font-size: 24px;
+    padding-top: 50px;
+    display: flex;
+    justify-content: flex-end;
+    a {
+      border-bottom: none;
+    }
+    img {
+      padding: 0 15px;
+    }
+  }
+}
