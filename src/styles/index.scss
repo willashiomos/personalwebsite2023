@@ -1,0 +1,132 @@
+/* --------------------------------------------
+* VARS
+* -------------------------------------------- */
+$color-green: #347033;
+
+/* --------------------------------------------
+* --media queries
+* -------------------------------------------- */
+$break-sm: 576px;
+$break-md: 768px;
+$break-lg: 992px;
+$break-xl: 1200px;
+$break-xxl: 2000px;
+
+/* --------------------------------------------
+* --layout
+* -------------------------------------------- */
+$content-max-width: 1220px;
+$page-max-width: 1740px;
+
+// Media Query (Max-Width)
+@mixin break-max($size) {
+  @media (max-width: $size - 1) {
+    @content;
+  }
+}
+
+// Media Query (Min-Width)
+@mixin break-min($size) {
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+// Media Query (Min-Width) and (Max-Width)
+@mixin break-min-max($min, $max) {
+  @media (min-width: $min) and (max-width: $max - 1) {
+    @content;
+  }
+}
+
+/* --------------------------------------------
+* FONTS
+* -------------------------------------------- */
+@font-face {
+  font-family: Lovelace;
+  src: url("../fonts/Lovelace-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("../fonts/HelveticaNeue-01.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+.lovelace {
+  font-family: Lovelace, sans-serif;
+}
+
+/* --------------------------------------------
+* GLOBAL
+* -------------------------------------------- */
+body {
+  background: linear-gradient(212deg, #fff 0%, #f1eded 100%);
+  color: $color-green;
+  font-size: 40px;
+}
+
+body,
+p,
+ul,
+main {
+  font-family: "Helvetica Neue", sans-serif
+  ;
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+html {
+  scroll-behavior: smooth;
+  position: relative;
+
+  body {
+    position: relative;
+    overflow-x: hidden;
+  }
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body > .container {
+  max-width: 100%;
+}
+
+.container {
+	margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: $page-max-width;
+  padding: 0 10%;
+
+  @include break-min(1800px) {
+    padding: 0;
+  }
+  @include break-max($page-max-width - 200px) {
+    padding: 0 5%;
+    
+  }
+  @include break-max($content-max-width + 40px) {
+    padding: 0 20px;
+    max-width: $content-max-width + 40px;
+  }
+  &-medium {
+    @include break-max($break-lg) {
+      max-width: 720px;
+    }
+  }
+}
+
+
+
+/* --------------------------------------------
+* MAIN STYLES
+* -------------------------------------------- */
