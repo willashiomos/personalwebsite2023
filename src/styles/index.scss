@@ -241,6 +241,51 @@ a {
         top: 575px;
         left: 20px;
       }
+
+      &:hover,
+      &:focus {
+        filter: brightness(0) saturate(100%) invert(42%) sepia(9%)
+          saturate(2464%) hue-rotate(215deg) brightness(95%) contrast(86%);
+        &:nth-child(3),
+        &:nth-child(4),
+        &:nth-child(6),
+        &:nth-child(8),
+        &:nth-child(10) {
+          animation: tilt-n-move-shaking 0.3s 1.5;
+        }
+      }
     }
+  }
+}
+
+// ROTATE ANIMATION
+.rotateAnim {
+  animation: rotation 2s infinite linear;
+}
+
+@keyframes tilt-n-move-shaking {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(5px, 5px) rotate(5deg);
+  }
+  50% {
+    transform: translate(0, 0) rotate(0eg);
+  }
+  75% {
+    transform: translate(-5px, 5px) rotate(-5deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
   }
 }
