@@ -114,17 +114,17 @@ body > .container {
 a {
   color: $color-green;
   text-decoration: none;
-  border-bottom: 2px solid $color-green;
+  text-decoration: underline;
+  text-underline-offset: 5px;
   transition: all 0.3s;
   cursor: pointer;
   &:hover,
   &:focus {
     color: $color-purple;
-    border-color: $color-purple;
   }
 
   &.lovelace {
-    border-bottom: none;
+    text-decoration: none;
   }
 }
 
@@ -165,8 +165,9 @@ a {
     padding-top: 50px;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     a {
-      border-bottom: none;
+      text-decoration: none;
     }
     img {
       padding: 0 15px;
@@ -183,65 +184,71 @@ a {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    &--mobile {
+      display: none;
+    }
+    &--desktop {
+      img {
+        // *
+        &:nth-child(1) {
+          top: -40px;
+          left: 20px;
+        }
+        // #
+        &:nth-child(2) {
+          top: -50px;
+          left: 50%;
+        }
+        // 4 point star
+        &:nth-child(3) {
+          top: -100px;
+          left: 80%;
+        }
+        // Star
+        &:nth-child(4) {
+          top: 80px;
+          left: 40px;
+        }
+        // Heart
+        &:nth-child(5) {
+          top: 90px;
+          left: 60%;
+        }
+        // Arrow
+        &:nth-child(6) {
+          top: 230px;
+          left: 40%;
+        }
+        // Lightning
+        &:nth-child(7) {
+          top: 300px;
+          left: 20px;
+        }
+        // Cloud
+        &:nth-child(8) {
+          top: 370px;
+          left: 20%;
+        }
+        // &
+        &:nth-child(9) {
+          top: 350px;
+          left: 70%;
+        }
+        // Spiral
+        &:nth-child(10) {
+          top: 300px;
+          left: 87%;
+        }
+        // Eye
+        &:nth-child(11) {
+          top: 575px;
+          left: 20px;
+        }
+      }
+    }
+
     img {
       position: absolute;
-
-      // *
-      &:nth-child(1) {
-        top: -40px;
-        left: 20px;
-      }
-      // #
-      &:nth-child(2) {
-        top: -50px;
-        left: 50%;
-      }
-      // 4 point star
-      &:nth-child(3) {
-        top: -100px;
-        left: 80%;
-      }
-      // Star
-      &:nth-child(4) {
-        top: 80px;
-        left: 40px;
-      }
-      // Heart
-      &:nth-child(5) {
-        top: 90px;
-        left: 60%;
-      }
-      // Arrow
-      &:nth-child(6) {
-        top: 230px;
-        left: 40%;
-      }
-      // Lightning
-      &:nth-child(7) {
-        top: 300px;
-        left: 20px;
-      }
-      // Cloud
-      &:nth-child(8) {
-        top: 370px;
-        left: 20%;
-      }
-      // &
-      &:nth-child(9) {
-        top: 350px;
-        left: 70%;
-      }
-      // Spiral
-      &:nth-child(10) {
-        top: 300px;
-        left: 87%;
-      }
-      // Eye
-      &:nth-child(11) {
-        top: 575px;
-        left: 20px;
-      }
-
       &:hover,
       &:focus {
         filter: brightness(0) saturate(100%) invert(42%) sepia(9%)
@@ -255,6 +262,132 @@ a {
         }
       }
     }
+  }
+}
+
+// MOBILE STYLES
+@include break-max(1000px) {
+  .container {
+    padding: 40px;
+    .intro {
+      font-size: 36px;
+    }
+    .main-content {
+      flex-flow: column;
+    }
+    .work {
+      min-width: auto;
+      &__title {
+        font-size: 30px;
+      }
+      &__item {
+        &__name {
+          font-size: 24px;
+        }
+        &__year {
+          font-size: 14px;
+        }
+      }
+    }
+    .images {
+      max-width: 400px;
+
+      &--desktop {
+        display: none;
+      }
+
+      &--mobile {
+        display: block;
+        position: relative;
+        height: 150px;
+        margin: 30px 0;
+      }
+
+      &:first-of-type {
+        img {
+          // *
+          &:nth-child(1) {
+            top: -80px;
+            left: 2%;
+          }
+          // #
+          &:nth-child(2) {
+            top: -100px;
+            left: 45%;
+          }
+          // 4 point star
+          &:nth-child(3) {
+            top: -140px;
+            left: 70%;
+          }
+          // Star
+          &:nth-child(4) {
+            top: 0px;
+            left: -5%;
+          }
+          // Heart
+          &:nth-child(5) {
+            top: 0px;
+            left: 55%;
+          }
+          // Arrow
+          &:nth-child(6) {
+            top: 60px;
+            left: 60%;
+          }
+        }
+      }
+
+      &:last-of-type {
+        &:last-child {
+          img {
+            // Lightning
+            &:nth-child(1) {
+              top: 0;
+              left: 0;
+            }
+            // Cloud
+            &:nth-child(2) {
+              top: 40px;
+              left: 10%;
+            }
+            // &
+            &:nth-child(3) {
+              top: 20px;
+              left: 70%;
+            }
+            // Spiral
+            &:nth-child(4) {
+              top: 100px;
+              left: 87%;
+            }
+            // Eye
+            &:nth-child(5) {
+              top: 170px;
+              left: 10px;
+            }
+            // Moon
+            &:nth-child(6) {
+              top: -50px;
+              left: 95%;
+            }
+          }
+        }
+      }
+    }
+
+    .footer {
+      font-size: 20px;
+      justify-content: flex-start;
+      padding-top: 90px;
+
+      img {
+        width: 50px;
+      }
+    }
+  }
+  .lovelace {
+    line-height: 10px;
   }
 }
 
