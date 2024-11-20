@@ -7,11 +7,18 @@ const SHAPES_TO_ROTATE_MOBILE = [
 ];
 const ROTATE_INTERVAL = 10000;
 const TIMEOUT_INTERVAL = 4000;
+const INITIAL_TIMEOUT_INTERVAL = 2000;
 
 document.addEventListener("DOMContentLoaded", () => {
   var images;
   var shapesToRotate;
   desktopOrMobile();
+
+  // first animation run
+  setTimeout(() => {
+    rotateRandomImg();
+  }, INITIAL_TIMEOUT_INTERVAL);
+  // rest
   window.setInterval(rotateRandomImg, ROTATE_INTERVAL);
 
   window.addEventListener("resize", () => {
