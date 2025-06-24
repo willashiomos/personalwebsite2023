@@ -1,7 +1,10 @@
 const Path = require('path');
+const glob = require('glob');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const pages = glob.sync(Path.resolve(__dirname, "../src/**/*.html"));
 
 module.exports = {
   entry: {
@@ -10,6 +13,7 @@ module.exports = {
   output: {
     path: Path.join(__dirname, '../build'),
     filename: 'js/[name].js',
+    clean: true,
   },
   optimization: {
     splitChunks: {
@@ -22,9 +26,14 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [{ from: Path.resolve(__dirname, '../public'), to: 'public' }],
     }),
-    new HtmlWebpackPlugin({
-      template: Path.resolve(__dirname, '../src/index.html'),
+    ...pages.map((page) => {
+      const filename = Path.basename(page);
+      return new HtmlWebpackPlugin({
+        template: page,
+        filename: filename,
+      });
     }),
+
   ],
   resolve: {
     alias: {

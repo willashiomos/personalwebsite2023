@@ -49,6 +49,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "core-js": "^3.26.1",
+    "glob": "^11.0.3",
     "postcss": "^8.4.27",
     "sass": "^1.64.0"
   }
