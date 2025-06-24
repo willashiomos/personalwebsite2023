@@ -1,4 +1,6 @@
 import "../styles/index.scss";
+import "../styles/design.scss";
+import "../styles/case-study.scss";
 
 const SHAPES_TO_ROTATE_DESKTOP = [[1, 2, 3, 4, 5, 7, 9, 11]];
 const SHAPES_TO_ROTATE_MOBILE = [
