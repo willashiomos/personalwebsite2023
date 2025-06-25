@@ -1,15 +1,69 @@
+@import "./index.scss";
+
 .design {
-    .intro {
-        padding-bottom: 60px;
+  .intro {
+    padding-bottom: 50px !important;
+  }
+  ul {
+    list-style: none;
+    // font-size: 30px;
+    // display: flex;
+    // flex-direction: column;
+    gap: 40px;
+    a {
+      text-decoration: underline;
     }
-    ul {
-        list-style: none;
-        font-size: 30px;
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      width: calc(50% - 20px);
+      img {
+        width: 100%;
+        transition: all 0.3s ease-in-out;
+      }
+      a {
+        text-decoration: none;
+        font-weight: 400;
         display: flex;
         flex-direction: column;
-        gap: 40px;
-        a {
-            text-decoration: underline;
+        gap: 30px;
+        div {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          &:after {
+            content: "";
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTI1LjcwNzEgOC43MDcxMUMyNi4wOTc2IDguMzE2NTggMjYuMDk3NiA3LjY4MzQyIDI1LjcwNzEgNy4yOTI5TDE5LjM0MzEgMC45Mjg5MzRDMTguOTUyNiAwLjUzODQxIDE4LjMxOTUgMC41Mzg0MDkgMTcuOTI4OSAwLjkyODkzNEMxNy41Mzg0IDEuMzE5NDYgMTcuNTM4NCAxLjk1MjYyIDE3LjkyODkgMi4zNDMxNUwyMy41ODU4IDhMMTcuOTI4OSAxMy42NTY5QzE3LjUzODQgMTQuMDQ3NCAxNy41Mzg0IDE0LjY4MDUgMTcuOTI4OSAxNS4wNzExQzE4LjMxOTUgMTUuNDYxNiAxOC45NTI2IDE1LjQ2MTYgMTkuMzQzMSAxNS4wNzExTDI1LjcwNzEgOC43MDcxMVpNMCA4TC04Ljc0MjI4ZS0wOCA5TDI1IDlMMjUgOEwyNSA3TDguNzQyMjhlLTA4IDdMMCA4WiIgZmlsbD0iIzM0NzAzMyIvPgo8L3N2Zz4K");
+            display: block;
+            width: 25px;
+            height: 36px;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: all 0.3s ease-in-out;
+          }
         }
+
+        &:hover {
+          img {
+            transform: scale(1.05);
+          }
+          div {
+            color: $color-green;
+            &:after {
+              transform: translateX(8px);
+            }
+          }
+        }
+      }
     }
+  }
+
+  @include break-max(768px) {
+    ul {
+      li {
+        width: 100%;
+      }
+    }
+  }
 }
