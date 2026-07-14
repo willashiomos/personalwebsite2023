@@ -1,10 +1,20 @@
 const Path = require('path');
+const Fs = require('fs');
 const glob = require('glob');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const pages = glob.sync(Path.resolve(__dirname, "../src/**/*.html"));
+const publicDir = Path.resolve(__dirname, '../public');
+const publicOutputDir = Path.resolve(__dirname, '../build/public');
+
+class CopyPublicPlugin {
+  apply(compiler) {
+    compiler.hooks.afterEmit.tapPromise('CopyPublicPlugin', async () => {
+      await Fs.promises.cp(publicDir, publicOutputDir, { recursive: true });
+    });
+  }
+}
 
 module.exports = {
   entry: {
@@ -23,9 +33,7 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new CopyWebpackPlugin({
-      patterns: [{ from: Path.resolve(__dirname, '../public'), to: 'public' }],
-    }),
+    new CopyPublicPlugin(),
     ...pages.map((page) => {
       const filename = Path.basename(page);
       return new HtmlWebpackPlugin({

@@ -2,6 +2,7 @@ const Path = require('path');
 const Webpack = require('webpack');
 const { merge } = require('webpack-merge');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const common = require('./webpack.common.js');
 
@@ -12,15 +13,20 @@ module.exports = merge(common, {
   output: {
     chunkFilename: 'js/[name].chunk.js',
   },
-  devServer: {
-    client: {
-      logging: 'error',
-    },
-    hot: true,
+  watchOptions: {
+    ignored: [
+      '**/build/**',
+      '**/node_modules/**',
+    ],
+    poll: 1000,
   },
   plugins: [
     new Webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development'),
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'css/[name].css',
+      chunkFilename: 'css/[name].chunk.css',
     }),
     new ESLintPlugin({
       extensions: 'js',
@@ -38,7 +44,7 @@ module.exports = merge(common, {
       {
         test: /\.s?css$/i,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
