@@ -1,3 +1,4 @@
+
 /* --------------------------------------------
 * VARS
 * -------------------------------------------- */
@@ -46,57 +47,35 @@ $page-max-width: 1740px;
 * -------------------------------------------- */
 
 @font-face {
-  font-family: "Helvetica Neue";
-  src: url("../fonts/HelveticaNeue-01.ttf") format("truetype");
+  font-family: "Helvetica Now";
+  src: url("../fonts/HelveticaNow-Regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Helvetica Neue";
-  src: url("../fonts/HelveticaNeueBlack.otf") format("opentype");
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Helvetica Neue";
-  src: url("../fonts/HelveticaNeueBold.otf") format("opentype");
+  font-family: "Helvetica Now";
+  src: url("../fonts/HelveticaNow-Bold.otf") format("opentype");
   font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Helvetica Neue";
-  src: url("../fonts/HelveticaNeueMedium.otf") format("opentype");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Helvetica Neue";
-  src: url("../fonts/HelveticaNeueLight.otf") format("opentype");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Helvetica Neue";
-  src: url("../fonts/HelveticaNeueThin.otf") format("opentype");
-  font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Helvetica Neue";
-  src: url("../fonts/HelveticaNeueUltraLight.otf") format("opentype");
-  font-weight: 100;
   font-style: normal;
 }
 
 /* --------------------------------------------
 * GLOBAL
 * -------------------------------------------- */
+
+:root {
+  --page-gutter: clamp(24px, 5vw, 76px);
+  --page-width: 1360px;
+  --color-black: #000;
+  --color-grey: #737373;
+  --color-secondary: #443e45;
+  --color-white: #fff;
+  --font-family: "Helvetica Now", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+}
+
 body {
   background: linear-gradient(212deg, #fff 0%, #f1eded 100%);
   color: $black;
@@ -106,7 +85,7 @@ body,
 p,
 ul,
 main {
-  font-family: "Helvetica Now Text", sans-serif;
+  font-family: var(--font-family);
   font-weight: normal;
   line-height: 1.2;
 }
@@ -162,14 +141,17 @@ a {
   --color-text: #000;
   --color-muted: #737373;
   --color-secondary: #443e45;
-  --font-regular: "HelveticaNowVarW05-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-bold: "Helvetica Now Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family: "Helvetica Now", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
 }
 
 html {
   background: #fff;
   color: var(--color-text);
-  font-family: var(--font-regular);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.2;
 }
 
 body {
