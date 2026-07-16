@@ -9,7 +9,7 @@
     "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.prod.js",
     "start": "npm run build && concurrently -k -n webpack,server \"npm:watch\" \"npm:serve\"",
     "watch": "webpack --watch --config webpack/webpack.config.dev.js",
-    "serve": "browser-sync start --server build --files build --port 3000 --no-open"
+    "serve": "browser-sync start --config bs-config.js"
   },
   "repository": {
     "type": "git"

@@ -13,24 +13,27 @@
   <body>
     <header class="hero" aria-labelledby="intro-title">
       <a class="name-badge" href="/" aria-label="Willa Shiomos home">
-        <img class="name-badge__star" src="./images/etc/star.svg" alt="" />
+        <img class="name-badge__star" src="./images/etc/star-black.svg" alt="" />
         <span>Willa<br />Shiomos</span>
       </a>
 
+      <nav class="hero__links" aria-label="Contact">
+        <a class="hero__pill" href="mailto:willashiomos@gmail.com">Email</a>
+        <a
+          class="hero__pill"
+          href="https://www.linkedin.com/in/willa-shiomos-a83319157/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+      </nav>
+
       <h1 class="hero__intro" id="intro-title">
-        <span>is a developer + designer based in</span>
-        <img class="hero__ny" src="./images/etc/i-love-ny.png" alt="New york" />
-        <span>working at</span>
-        <a class="hero__logo-link" href="https://valnetinc.com/" target="_blank" rel="noopener noreferrer">
-          <img class="hero__valnet-mark" src="./images/etc/valnet-mark.svg" alt="" />
-          <img class="hero__valnet-word" src="./images/etc/valnet-word.svg" alt="Valnet" />
-        </a>
-        <span>.</span>
-        <span>She previously built websites at</span>
-        <a class="hero__tank-link" href="https://tankdesign.com" target="_blank" rel="noopener noreferrer">
-          Tank
-        </a>
-        <span>design agency.</span>
+        is a developer + designer based in New York, NY, currently working at
+        <a href="https://valnetinc.com/" target="_blank" rel="noopener noreferrer">Valnet</a>.
+        She previously built websites at
+        <a href="https://tankdesign.com" target="_blank" rel="noopener noreferrer">Tank Design</a>.
       </h1>
     </header>
 
@@ -41,86 +44,209 @@
         <nav class="filters" aria-label="Project categories">
           <a class="filters__link filters__link--active" href="/">All</a>
           <a class="filters__link" href="/">Development</a>
-          <a class="filters__link" href="/design.html">Design</a>
+          <a class="filters__link" href="/design">Design</a>
         </nav>
 
-        <div class="work-grid">
-          <article class="project-card">
-            <a class="project-card__media project-card__media--hilton" href="https://jobs.hilton.com/" target="_blank" rel="noopener noreferrer">
+        <div class="work-list">
+          <article class="project-row">
+            <div class="project-row__info">
+              <div class="project-row__heading">
+                <h3>Carbuzz Marketplace</h3>
+                <time datetime="2025">2025</time>
+              </div>
+              <div class="project-row__meta">
+                <span>Design &amp; Development</span>
+                <a href="https://www.carbuzz.com/" target="_blank" rel="noopener noreferrer">
+                  View
+                  <img src="./images/etc/arrow-figma.png" alt="" />
+                </a>
+              </div>
+            </div>
+            <a
+              class="project-row__media"
+              href="https://www.carbuzz.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="./images/cover-photos/cover-carbuzz-marketplace.png" alt="Carbuzz Marketplace preview" />
+            </a>
+          </article>
+
+          <article class="project-row">
+            <div class="project-row__info">
+              <div class="project-row__heading">
+                <h3>Hilton Hotels</h3>
+                <time datetime="2025">2025</time>
+              </div>
+              <div class="project-row__meta">
+                <span>Development</span>
+                <a href="https://jobs.hilton.com/" target="_blank" rel="noopener noreferrer">
+                  View
+                  <img src="./images/etc/arrow-figma.png" alt="" />
+                </a>
+              </div>
+            </div>
+            <a
+              class="project-row__media"
+              href="https://jobs.hilton.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src="./images/cover-photos/cover-hilton.png" alt="Hilton Hotels website preview" />
             </a>
-            <div class="project-card__heading">
-              <h3>Hilton Hotels</h3>
-              <time datetime="2025">2025</time>
-            </div>
-            <div class="project-card__meta">
-              <span>Development</span>
-              <a href="https://jobs.hilton.com/" target="_blank" rel="noopener noreferrer">
-                View
-                <img src="./images/etc/arrow.png" alt="" />
-              </a>
-            </div>
           </article>
 
-          <article class="project-card">
-            <a class="project-card__media project-card__media--fidelity" href="https://jobs.fidelity.com/" target="_blank" rel="noopener noreferrer">
+          <article class="project-row">
+            <div class="project-row__info">
+              <div class="project-row__heading">
+                <h3>Fidelity</h3>
+                <time datetime="2024">2024</time>
+              </div>
+              <div class="project-row__meta">
+                <span>Development</span>
+                <a href="https://jobs.fidelity.com/" target="_blank" rel="noopener noreferrer">
+                  View
+                  <img src="./images/etc/arrow-figma.png" alt="" />
+                </a>
+              </div>
+            </div>
+            <a
+              class="project-row__media"
+              href="https://jobs.fidelity.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src="./images/cover-photos/cover-fidelity.png" alt="Fidelity Investments website preview" />
             </a>
-            <div class="project-card__heading">
-              <h3>Fidelity Investments</h3>
-              <time datetime="2024">2024</time>
-            </div>
-            <div class="project-card__meta">
-              <span>Development</span>
-              <a href="https://jobs.fidelity.com/" target="_blank" rel="noopener noreferrer">
-                View
-                <img src="./images/etc/arrow.png" alt="" />
-              </a>
-            </div>
           </article>
 
-          <article class="project-card">
-            <a class="project-card__media project-card__media--tedx" href="https://www.tedxnewengland.com" target="_blank" rel="noopener noreferrer">
-              <img src="./images/cover-photos/cover-tedx.png" alt="TedXNewEngland website preview" />
+          <article class="project-row">
+            <div class="project-row__info">
+              <div class="project-row__heading">
+                <h3>TedXNewEngland</h3>
+                <time datetime="2024">2024</time>
+              </div>
+              <div class="project-row__meta">
+                <span>Development</span>
+                <a href="https://www.tedxnewengland.com" target="_blank" rel="noopener noreferrer">
+                  View
+                  <img src="./images/etc/arrow-figma.png" alt="" />
+                </a>
+              </div>
+            </div>
+            <a
+              class="project-row__media"
+              href="https://www.tedxnewengland.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="./images/cover-photos/cover-tedxnewengland.png" alt="TedXNewEngland website preview" />
             </a>
-            <div class="project-card__heading">
-              <h3>TedXNewEngland</h3>
-              <time datetime="2024">2024</time>
-            </div>
-            <div class="project-card__meta">
-              <span>Development</span>
-              <a href="https://www.tedxnewengland.com" target="_blank" rel="noopener noreferrer">
-                View
-                <img src="./images/etc/arrow.png" alt="" />
-              </a>
-            </div>
           </article>
 
-          <article class="project-card">
-            <a class="project-card__media project-card__media--tank" href="https://tankdesign.com" target="_blank" rel="noopener noreferrer">
+          <article class="project-row">
+            <div class="project-row__info">
+              <div class="project-row__heading">
+                <h3>Tank Design</h3>
+                <time datetime="2024">2024</time>
+              </div>
+              <div class="project-row__meta">
+                <span>Development</span>
+                <a href="https://tankdesign.com" target="_blank" rel="noopener noreferrer">
+                  View
+                  <img src="./images/etc/arrow-figma.png" alt="" />
+                </a>
+              </div>
+            </div>
+            <a
+              class="project-row__media"
+              href="https://tankdesign.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src="./images/cover-photos/cover-tank-design.png" alt="Tank Design website preview" />
-              <span class="sr-only">Tank Design website preview</span>
             </a>
-            <div class="project-card__heading">
-              <h3>Tank Design</h3>
-              <time datetime="2024">2024</time>
+          </article>
+
+          <article class="project-row">
+            <div class="project-row__info">
+              <div class="project-row__heading">
+                <h3>Longpoint</h3>
+                <time datetime="2023">2023</time>
+              </div>
+              <div class="project-row__meta">
+                <span>Development</span>
+                <a href="https://www.longpoint.com/" target="_blank" rel="noopener noreferrer">
+                  View
+                  <img src="./images/etc/arrow-figma.png" alt="" />
+                </a>
+              </div>
             </div>
-            <div class="project-card__meta">  
-              <span>Development</span>
-              <a href="https://tankdesign.com" target="_blank" rel="noopener noreferrer">
-                View
-                <img src="./images/etc/arrow.png" alt="" />
-              </a>
+            <a
+              class="project-row__media"
+              href="https://www.longpoint.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="./images/cover-photos/cover-longpoint.png" alt="Longpoint website preview" />
+            </a>
+          </article>
+
+          <article class="project-row">
+            <div class="project-row__info">
+              <div class="project-row__heading">
+                <h3>Latent Images</h3>
+                <time datetime="2020">2020</time>
+              </div>
+              <div class="project-row__meta">
+                <span>Design &amp; Development</span>
+                <a href="/latent-images">
+                  View
+                  <img src="./images/etc/arrow-figma.png" alt="" />
+                </a>
+              </div>
             </div>
+            <a class="project-row__media" href="/latent-images">
+              <img src="./images/cover-photos/cover-latentimages.png" alt="Latent Images project preview" />
+            </a>
+          </article>
+
+          <article class="project-row">
+            <div class="project-row__info">
+              <div class="project-row__heading">
+                <h3>HackBeanpot</h3>
+                <time datetime="2019">2019, 2020</time>
+              </div>
+              <div class="project-row__meta">
+                <span>Design</span>
+                <a href="/hackbeanpot">
+                  View
+                  <img src="./images/etc/arrow-figma.png" alt="" />
+                </a>
+              </div>
+            </div>
+            <a class="project-row__media" href="/hackbeanpot">
+              <img src="./images/cover-photos/cover-hackbeanpot.png" alt="HackBeanpot project preview" />
+            </a>
           </article>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <a class="site-footer__email" href="mailto:willashiomos@gmail.com">willashiomos@gmail.com</a>
-      <a class="site-footer__social" href="https://www.linkedin.com/in/willa-shiomos-a83319157/" target="_blank" rel="noopener noreferrer">
+      <a class="site-footer__email" href="mailto:willashiomos@gmail.com">
+        <img src="./images/etc/star-black.svg" alt="" />
+        willashiomos@gmail.com
+        <img src="./images/etc/star-black.svg" alt="" />
+      </a>
+      <a
+        class="site-footer__social"
+        href="https://www.linkedin.com/in/willa-shiomos-a83319157/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         LinkedIn
+        <img src="./images/etc/arrow-figma.png" alt="" />
       </a>
     </footer>
   </body>
