@@ -4,132 +4,261 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Willa Shiomos | Developer & Designer</title>
-    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="./images/etc/star-black.svg" />
     <meta
       name="description"
-      content="Hi, I’m Willa Shiomos, a software developer and designer in Brooklyn, NY. I currently build websites at Tank Design."
+      content="Hi, I’m Willa Shiomos, a front-end engineer and designer in Brooklyn, NY. I currently design and code for Valnet, and previously built websites at Tank Design."
     />
   </head>
   <body>
-    <div class="container">
-      <h1 class="intro">
-        Hi, I’m <a href="#" class="lovelace">Willa Shiomos</a>, a software
-        developer and designer in Brooklyn, NY. I previously built websites at
+    <header class="hero" aria-labelledby="intro-title">
+      <a class="name-badge" href="/" aria-label="Willa Shiomos home">
+        <div class="name-badge__container">
+          <img class="name-badge__star" src="./images/etc/star-black.svg" alt="" />
+          <span>Willa<br />Shiomos</span>
+          <img class="name-badge__star name-badge__star--right" src="./images/etc/star-black.svg" alt="" />
+        </div>
+      </a>
+
+      <nav class="hero__links" aria-label="Contact">
+        <a class="hero__pill" href="mailto:willashiomos@gmail.com">Email</a>
         <a
-          href="https://tankdesign.com"
+          class="hero__pill"
+          href="https://www.linkedin.com/in/willa-shiomos-a83319157/"
           target="_blank"
           rel="noopener noreferrer"
-          >Tank Design</a
-        >.
+        >
+          LinkedIn
+        </a>
+      </nav>
+
+      <h1 class="hero__intro" id="intro-title">
+        is a developer + designer based in New York, NY, currently working at
+        <a href="https://valnetinc.com/" target="_blank" rel="noopener noreferrer">Valnet</a>.
+        She previously built websites at
+        <a href="https://tankdesign.com" target="_blank" rel="noopener noreferrer">Tank Design</a>.
       </h1>
-      <div class="images">
-        <div class="images--mobile">
-          <img src="./images/mobile/*.svg" />
-          <img src="./images/mobile/hash.svg" />
-          <img src="./images/mobile/Portal.svg" />
-          <img src="./images/mobile/Star.svg" />
-          <img src="./images/mobile/Heart.svg" />
-          <img src="./images/mobile/Arrow.svg" />
-        </div>
-      </div>
-      <div class="main-content">
-        <div class="work">
-          <div class="lovelace work__title">Selected Work</div>
-          <div class="work__item">
+    </header>
+
+    <main>
+      <section class="work-section" aria-labelledby="work-title">
+        <h2 class="sr-only" id="work-title">Selected work</h2>
+
+        <nav class="filters" aria-label="Project categories">
+          <button type="button" class="filters__link filters__link--active" data-filter="all" aria-pressed="true">
+            All
+          </button>
+          <button
+            type="button"
+            class="filters__link"
+            data-filter="development"
+            aria-pressed="false"
+          >
+            Development
+          </button>
+          <button type="button" class="filters__link" data-filter="design" aria-pressed="false">
+            Design
+          </button>
+        </nav>
+
+        <div class="work-list">
+          <article class="project-row">
+            <div class="project-row__info">
+              <div class="project-row__heading">
+                <h3>Carbuzz Marketplace</h3>
+                <time datetime="2025">2025</time>
+              </div>
+              <div class="project-row__meta">
+                <span>Design &amp; Development</span>
+                <a href="/carbuzz-marketplace">
+                  View
+                  <img src="./images/etc/arrow.png" alt="" />
+                </a>
+              </div>
+            </div>
+            <a class="project-row__media" href="/carbuzz-marketplace">
+              <img src="./images/cover-photos/cover-carbuzz-marketplace.png" alt="Carbuzz Marketplace preview" />
+            </a>
+          </article>
+
+          <article class="project-row">
+            <div class="project-row__info">
+              <div class="project-row__heading">
+                <h3>Hilton Hotels</h3>
+                <time datetime="2025">2025</time>
+              </div>
+              <div class="project-row__meta">
+                <span>Development</span>
+                <a href="https://jobs.hilton.com/" target="_blank" rel="noopener noreferrer">
+                  View
+                  <img src="./images/etc/arrow.png" alt="" />
+                </a>
+              </div>
+            </div>
             <a
-              class="work__item__name"
+              class="project-row__media"
+              href="https://jobs.hilton.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="./images/cover-photos/cover-hilton.png" alt="Hilton Hotels website preview" />
+            </a>
+          </article>
+
+          <article class="project-row">
+            <div class="project-row__info">
+              <div class="project-row__heading">
+                <h3>Fidelity</h3>
+                <time datetime="2024">2024</time>
+              </div>
+              <div class="project-row__meta">
+                <span>Development</span>
+                <a href="https://jobs.fidelity.com/" target="_blank" rel="noopener noreferrer">
+                  View
+                  <img src="./images/etc/arrow.png" alt="" />
+                </a>
+              </div>
+            </div>
+            <a
+              class="project-row__media"
               href="https://jobs.fidelity.com/"
               target="_blank"
               rel="noopener noreferrer"
-              >Fidelity Careers
-              </a
             >
-            <div class="work__item__year">(2024)</div>
-          </div>
-          <div class="work__item">
+              <img src="./images/cover-photos/cover-fidelity.png" alt="Fidelity Investments website preview" />
+            </a>
+          </article>
+
+          <article class="project-row">
+            <div class="project-row__info">
+              <div class="project-row__heading">
+                <h3>TedXNewEngland</h3>
+                <time datetime="2024">2024</time>
+              </div>
+              <div class="project-row__meta">
+                <span>Development</span>
+                <a href="https://www.tedxnewengland.com" target="_blank" rel="noopener noreferrer">
+                  View
+                  <img src="./images/etc/arrow.png" alt="" />
+                </a>
+              </div>
+            </div>
             <a
-              class="work__item__name"
+              class="project-row__media"
               href="https://www.tedxnewengland.com"
               target="_blank"
               rel="noopener noreferrer"
-              >Ted<sup>x</sup>NewEngland
-              </a
             >
-            <div class="work__item__year">(2024)</div>
-          </div>
-          <div class="work__item">
+              <img src="./images/cover-photos/cover-tedxnewengland.png" alt="TedXNewEngland website preview" />
+            </a>
+          </article>
+
+          <article class="project-row">
+            <div class="project-row__info">
+              <div class="project-row__heading">
+                <h3>Tank Design</h3>
+                <time datetime="2024">2024</time>
+              </div>
+              <div class="project-row__meta">
+                <span>Development</span>
+                <a href="https://tankdesign.com" target="_blank" rel="noopener noreferrer">
+                  View
+                  <img src="./images/etc/arrow.png" alt="" />
+                </a>
+              </div>
+            </div>
             <a
-              class="work__item__name"
-              href="https://longpoint.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Longpoint</a
-            >
-            <div class="work__item__year">(2023)</div>
-          </div>
-          <div class="work__item">
-            <a
-              class="work__item__name"
+              class="project-row__media"
               href="https://tankdesign.com"
               target="_blank"
               rel="noopener noreferrer"
-              >Tank Design</a
             >
-            <div class="work__item__year">(2021 - 2025)</div>
-          </div>
-          <div class="work__item">
-            <div class="work__item__name">Quiznos</div>
-            <div class="work__item__year">(2023)</div>
-          </div>
-          <div class="work__item">
-            <div
-              class="work__item__name"
-              >State Street Alpha
+              <img src="./images/cover-photos/cover-tank-design.png" alt="Tank Design website preview" />
+            </a>
+          </article>
+
+          <article class="project-row">
+            <div class="project-row__info">
+              <div class="project-row__heading">
+                <h3>Longpoint</h3>
+                <time datetime="2023">2023</time>
               </div>
-            <div class="work__item__year">(2022, 2023)</div>
-          </div>
-          <div class="work__item">
+              <div class="project-row__meta">
+                <span>Development</span>
+                <a href="https://www.longpoint.com/" target="_blank" rel="noopener noreferrer">
+                  View
+                  <img src="./images/etc/arrow.png" alt="" />
+                </a>
+              </div>
+            </div>
             <a
-              class="work__item__name"
-              href="https://quiltandco.com/"
+              class="project-row__media"
+              href="https://www.longpoint.com/"
               target="_blank"
               rel="noopener noreferrer"
-              >Coppercane</a
             >
-            <div class="work__item__year">(2021)</div>
-          </div>
+            <video class="project-row__media-video" width="470" height="255" poster="./images/cover-photos/cover-longpoint.png" autoplay="" loop="" playsinline="" muted="" style="translate: none; rotate: none; scale: none; transform: translate(-5%, 0.0476%) translate3d(0px, 0px, 0px);">
+              <source src="https://player.vimeo.com/progressive_redirect/playback/1071210738/rendition/1080p/file.mp4?loc=external&amp;signature=8654a8e73c1195f5b87ea12db97b501adb9e94440b31194f1afe607147d1015d" type="video/mp4">
+            </video>
+            </a>
+          </article>
+
+          <article class="project-row">
+            <div class="project-row__info">
+              <div class="project-row__heading">
+                <h3>Latent Images</h3>
+                <time datetime="2020">2020</time>
+              </div>
+              <div class="project-row__meta">
+                <span>Design &amp; Development</span>
+                <a href="/latent-images">
+                  View
+                  <img src="./images/etc/arrow.png" alt="" />
+                </a>
+              </div>
+            </div>
+            <a class="project-row__media" href="/latent-images">
+              <img src="./images/cover-photos/cover-latentimages.png" alt="Latent Images project preview" />
+            </a>
+          </article>
+
+          <article class="project-row">
+            <div class="project-row__info">
+              <div class="project-row__heading">
+                <h3>HackBeanpot</h3>
+                <time datetime="2019">2019, 2020</time>
+              </div>
+              <div class="project-row__meta">
+                <span>Design</span>
+                <a href="/hackbeanpot">
+                  View
+                  <img src="./images/etc/arrow.png" alt="" />
+                </a>
+              </div>
+            </div>
+            <a class="project-row__media" href="/hackbeanpot">
+              <img src="./images/cover-photos/cover-hackbeanpot.png" alt="HackBeanpot project preview" />
+            </a>
+          </article>
         </div>
-        <div class="images">
-          <div class="images--desktop">
-            <img src="./images/desktop/*.svg" />
-            <img src="./images/desktop/hash.svg" />
-            <img src="./images/desktop/Portal.svg" />
-            <img src="./images/desktop/Star.svg" />
-            <img src="./images/desktop/Heart.svg" />
-            <img src="./images/desktop/Arrow.svg" />
-            <img src="./images/desktop/Lightning.svg" />
-            <img src="./images/desktop/Cloud.svg" />
-            <img src="./images/desktop/&.svg" />
-            <img src="./images/desktop/Spiral.svg" />
-            <img src="./images/desktop/Eye.svg" />
-          </div>
-          <div class="images--mobile">
-            <img src="./images/mobile/Lightning.svg" />
-            <img src="./images/mobile/Cloud.svg" />
-            <img src="./images/mobile/&.svg" />
-            <img src="./images/mobile/Spiral.svg" />
-            <img src="./images/mobile/Eye.svg" />
-            <img src="./images/mobile/Moon.svg" />
-          </div>
-        </div>
-      </div>
-      <div class="footer">
-        <a href="https://www.linkedin.com/in/willa-shiomos-a83319157/"
-          >LinkedIn</a
-        >
-        <img src="./images/footer_star.svg" />
-        <a href="mailto:willashiomos@gmail.com">Get in touch</a>
-      </div>
-    </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="site-footer__email" href="mailto:willashiomos@gmail.com">
+        <img src="./images/etc/star-black.svg" alt="" />
+        willashiomos@gmail.com
+        <img src="./images/etc/star-black.svg" alt="" />
+      </a>
+      <a
+        class="site-footer__social"
+        href="https://www.linkedin.com/in/willa-shiomos-a83319157/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        LinkedIn
+        <img src="./images/etc/arrow.png" alt="" />
+      </a>
+    </footer>
   </body>
 </html>

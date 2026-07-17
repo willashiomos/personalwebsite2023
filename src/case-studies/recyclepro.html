@@ -3,45 +3,99 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Willa Shiomos | Developer & Designer</title>
-    <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+    <title>RecyclePro | Willa Shiomos</title>
+    <link rel="icon" type="image/x-icon" href="../images/etc/star-black.svg" />
     <meta
       name="description"
-      content="Hi, I’m Willa Shiomos, a software developer and designer in Brooklyn, NY. I currently build websites at Tank Design."
+      content="Case study: RecyclePro — mobile UI design for an app that helps users recycle frequently and correctly."
     />
   </head>
   <body>
-    <div class="container case-study">
-      <div class="case-study__back"><a href="/design">Back</a></div>
-      <div class="case-study__eyebrow">Case study</div>
-      <h1 class="case-study__title lovelace">RecyclePro</h1>
-      <div class="case-study__intro">
-        <h2>Mobile Design | UI Design</h2>
-        <div class="case-study__intro__desc">
-          <p>
-            RecyclePro is a mobile app that helps users to recycle frequently
-            and correctly.
-          </p>
+    <header class="case-header">
+      <a class="name-badge" href="/" aria-label="Willa Shiomos home">
+        <div class="name-badge__container">
+          <img class="name-badge__star" src="../images/etc/star-black.svg" alt="" />
+          <span>Willa<br />Shiomos</span>
+          <img class="name-badge__star name-badge__star--right" src="../images/etc/star-black.svg" alt="" />
         </div>
-      </div>
-      <img src="../images/case-studies/recyclepro/cover.png" />
+      </a>
+      <nav class="case-header__links" aria-label="Contact">
+        <a class="case-header__pill" href="mailto:willashiomos@gmail.com">Email</a>
+        <a
+          class="case-header__pill"
+          href="https://www.linkedin.com/in/willa-shiomos-a83319157/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+      </nav>
+    </header>
 
-      <h3>Process</h3>
-      <p>
-        Begin with <b>wireframes</b> and a lo-fi prototype of the interactions.
-      </p>
-      <img src="../images/case-studies/recyclepro/wireframes.png" />
-      <p>Develop a <b>design system</b> to communicate values and ease.</p>
-      <img src="../images/case-studies/recyclepro/design-system.png" />
-      <h3>More screens</h3>
-      <img src="../images/case-studies/recyclepro/proto.png" />
-      <div class="case-study__more">
-        <a href="/design"
-          ><img
-            src="../images/case-studies/more-projects.png"
-            alt="More projects"
-        /></a>
+    <main class="case-study">
+      <a class="case-study__back" href="/">
+        <img src="../images/etc/arrow-back.svg" alt="" />
+        Back to home
+      </a>
+
+      <p class="case-study__eyebrow">Case Study</p>
+      <h1 class="case-study__title">RecyclePro</h1>
+      <p class="case-study__disciplines">Mobile Design | UI Design</p>
+
+      <section class="case-study__section">
+        <h2>Overview</h2>
+        <p>RecyclePro is a mobile app that helps users recycle frequently and correctly.</p>
+        <div class="case-study__media">
+          <img src="../images/case-studies/recyclepro/cover.png" alt="RecyclePro app cover" />
+        </div>
+      </section>
+
+      <section class="case-study__section">
+        <h2>Process</h2>
+        <p>Begin with <b>wireframes</b> and a lo-fi prototype of the interactions.</p>
+        <div class="case-study__media">
+          <img
+            src="../images/case-studies/recyclepro/wireframes.png"
+            alt="RecyclePro wireframes"
+          />
+        </div>
+        <p>Develop a <b>design system</b> to communicate values and ease.</p>
+        <div class="case-study__media">
+          <img
+            src="../images/case-studies/recyclepro/design-system.png"
+            alt="RecyclePro design system"
+          />
+        </div>
+      </section>
+
+      <section class="case-study__section">
+        <h2>More screens</h2>
+        <div class="case-study__media">
+          <img src="../images/case-studies/recyclepro/proto.png" alt="RecyclePro prototype screens" />
+        </div>
+      </section>
+
+      <div class="case-study__cta">
+        <img src="../images/etc/arrow-back.svg" alt="" />
+        <a href="/">Back to home</a>
       </div>
-    </div>
+    </main>
+
+    <footer class="site-footer">
+      <a class="site-footer__email" href="mailto:willashiomos@gmail.com">
+        <img src="../images/etc/star-black.svg" alt="" />
+        willashiomos@gmail.com
+        <img src="../images/etc/star-black.svg" alt="" />
+      </a>
+      <a
+        class="site-footer__social"
+        href="https://www.linkedin.com/in/willa-shiomos-a83319157/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        LinkedIn
+        <img src="../images/etc/arrow.png" alt="" />
+      </a>
+    </footer>
   </body>
 </html>
