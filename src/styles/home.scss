@@ -452,6 +452,7 @@
 
 @include break-max($break-xl) {
   .hero {
+    gap: 0 10px;
     &__intro {
       max-width: 720px;
       margin-top: 28px;
@@ -501,48 +502,78 @@
   }
 
   .hero {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    padding-top: 24px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+    gap: 8px 16px;
+    align-items: start;
+    padding-top: 0;
 
     &__links {
-      order: -1;
-      align-self: flex-end;
+      display: flex;
+      flex-direction: column;
+      grid-column: 2;
+      grid-row: 1;
       gap: 10px;
-      margin-bottom: 12px;
+      align-items: stretch;
+      align-self: center;
+      order: 0;
+      margin-bottom: 0;
     }
 
     &__pill {
-      min-width: 96px;
-      padding: 6px 14px;
+      min-width: 108px;
+      padding: 7px 16px;
       font-size: 14.4px;
     }
 
     &__intro {
+      grid-column: 1 / -1;
+      grid-row: 2;
       max-width: none;
-      margin-top: 28px;
+      margin-top: 72px;
+      padding-left: 12px;
       font-size: clamp(19.8px, 5.22vw, 25.2px);
       line-height: 1.35;
     }
   }
 
   .name-badge {
-    align-self: flex-start;
-    width: min(280px, 78vw);
+    grid-column: 1;
+    grid-row: 1;
+    align-self: start;
+    width: min(220px, 62vw);
     max-width: none;
-    margin-left: calc(var(--page-gutter) * -0.45);
-    padding: 20px 0;
+    margin-top: -20px;
+    margin-left: calc(var(--page-gutter) * -1);
+    padding: 72px 0 28px 16px;
 
     &::before {
-      left: -45%;
-      width: 160%;
-      transform: translateY(-40%);
+      top: -8%;
+      left: -38%;
+      width: 150%;
+      transform: translateY(-22%);
     }
 
     &__container {
-      width: 84%;
-      margin-left: -4cqi;
+      width: 88%;
+      max-width: none;
+      margin-top: 20cqi;
+      margin-left: -2cqi;
+    }
+
+    &__star {
+      width: 9cqi;
+      margin-top: 2.5cqi;
+      height: 9cqi;
+
+      &--right {
+        margin-bottom: 2.5cqi;
+      }
+    }
+
+    span {
+      font-size: 15.5cqi;
     }
   }
 
