@@ -1,114 +1,456 @@
 @import "./index.scss";
 
+/* --------------------------------------------
+ * Case study page chrome (matches home header/footer)
+ * -------------------------------------------- */
+
+.case-header {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: min(calc(100% - (var(--page-gutter) * 2)), var(--page-width));
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+.case-header__links {
+  display: flex;
+  flex-shrink: 0;
+  gap: 17px;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.case-header__pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 127px;
+  padding: 7px 11px;
+  color: #000;
+  font-size: 19.8px;
+  line-height: 1.2;
+  text-decoration: none;
+  border: 1px solid #000;
+  border-radius: 74px;
+  transition: color 0.3s, background 0.3s;
+
+  &:hover,
+  &:focus {
+    color: var(--color-white);
+    background: var(--color-black);
+  }
+}
+
+.case-header .name-badge {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 240px;
+  margin-top: -40px;
+  margin-left: clamp(-24px, calc(var(--page-gutter) * -0.35), -8px);
+  padding: 56px 8px 28px 12px;
+  color: #000;
+  font-family: "PP Neue Montreal", "Helvetica Now", sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  container-type: inline-size;
+  transform-origin: center;
+
+  &::before {
+    position: absolute;
+    top: -20%;
+    left: -35%;
+    width: 155%;
+    aspect-ratio: 1;
+    pointer-events: none;
+    content: "";
+    border: 1px solid #000;
+    border-radius: 50%;
+  }
+
+  &__container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    gap: 1.6cqi;
+    align-items: flex-start;
+    width: 88%;
+  }
+
+  &__star {
+    flex-shrink: 0;
+    width: 8.5cqi;
+    margin-top: 2.5cqi;
+    height: 8.5cqi;
+    object-fit: contain;
+
+    &--right {
+      align-self: flex-end;
+      margin-top: 0;
+      margin-bottom: 2.5cqi;
+    }
+  }
+
+  span {
+    flex: 1 1 auto;
+    font-size: 15cqi;
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: 0.045em;
+  }
+}
+
+.site-footer {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+  width: min(calc(100% - (var(--page-gutter) * 2)), var(--page-width));
+  min-height: 54px;
+  margin: 0 auto;
+  padding: 24px 0 40px;
+  font-size: 21.6px;
+  line-height: 1.25;
+  border-top: 1px solid #000;
+
+  &__email {
+    display: inline-flex;
+    gap: 7px;
+    align-items: center;
+    color: #000;
+    font-family: var(--font-family);
+    font-weight: 400;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+
+    img {
+      width: 26.1px;
+      height: 26.1px;
+      object-fit: contain;
+    }
+  }
+
+  &__social {
+    display: inline-flex;
+    gap: 6px;
+    align-items: center;
+    color: #000;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+
+    img {
+      width: 22.5px;
+      height: 22.5px;
+      object-fit: contain;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &:hover img {
+      transform: translateX(2px);
+    }
+  }
+}
+
+/* --------------------------------------------
+ * Case study content
+ * -------------------------------------------- */
+
 .case-study {
-  color: black;
-  img {
-    width: 100%;
-    margin: 50px 0;
-  }
-  &__title {
-    margin-bottom: 30px;
-    font-size: 76px;
-    font-weight: normal;
-    color: $color-green;
-    line-height: 96px;
-  }
+  width: min(calc(100% - (var(--page-gutter) * 2)), var(--page-width));
+  margin: 0 auto;
+  padding: 48px 0 64px;
+  color: var(--color-black);
 
-  &__intro {
-    width: fit-content;
-    &__title {
-      margin-bottom: 20px;
+  &__back {
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 56px;
+    color: #000;
+    font-size: 18px;
+    line-height: 1.2;
+    text-decoration: none;
+
+    img {
+      display: block;
+      width: 15px;
+      height: 12px;
+      flex-shrink: 0;
     }
 
-    &__desc {
-      font-size: 20px;
-      font-weight: 300;
-    }
-
-    h2 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      font-weight: 500;
-      color: $color-green;
+    &:hover {
+      opacity: 0.7;
     }
   }
 
   &__eyebrow {
-    text-transform: uppercase;
-    font-size: 15px;
-    letter-spacing: 3px;
-    margin-bottom: 30px;
-  }
-
-  h3 {
+    margin: 0 0 12px;
+    font-family: var(--font-family);
     font-size: 28px;
-    color: $color-green;
-    font-weight: 500;
-    font-family: Lovelace, sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
   }
 
+  &__title {
+    margin: 0 0 12px;
+    font-family: "PP Neue Montreal", "Helvetica Now", sans-serif;
+    font-size: clamp(36px, 4.2vw, 56px);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  &__disciplines {
+    margin: 0 0 96px;
+    color: var(--color-secondary);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  &__section {
+    margin-bottom: 72px;
+
+    &:last-of-type {
+      margin-bottom: 80px;
+    }
+
+    h2 {
+      margin: 0 0 8px;
+      font-family: var(--font-family);
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    > p {
+      max-width: 72ch;
+      margin: 0 0 28px;
+      color: var(--color-secondary);
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.45;
+
+      b,
+      strong {
+        color: var(--color-black);
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__media {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 40px;
+    overflow: hidden;
+    background: linear-gradient(160deg, #2a2a2a 0%, #4a1f24 55%, #6b1e28 100%);
+    border-radius: 20px;
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin: 0;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.35);
+    }
+
+    &--split {
+      img {
+        flex: 1 1 0;
+        width: calc(50% - 12px);
+        max-width: 560px;
+      }
+    }
+
+    &--stack {
+      flex-direction: column;
+      gap: 28px;
+
+      img {
+        width: min(100%, 980px);
+      }
+    }
+  }
+
+  &__cta {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 48px;
+
+    img {
+      display: block;
+      width: 15px;
+      height: 12px;
+      flex-shrink: 0;
+    }
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 180px;
+      padding: 10px 22px;
+      color: #000;
+      font-size: 18px;
+      line-height: 1.2;
+      text-decoration: none;
+      border: 1px solid #000;
+      border-radius: 74px;
+      transition: color 0.3s, background 0.3s;
+
+      &:hover,
+      &:focus {
+        color: var(--color-white);
+        background: var(--color-black);
+      }
+    }
+  }
+
+  // Legacy content helpers used by older studies
   ul {
-    margin: 20px 0;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    font-weight: 300;
+    gap: 16px;
+    margin: 0 0 28px;
+    padding: 0;
+    list-style: none;
+
     li {
+      margin: 0;
+      color: var(--color-secondary);
       font-size: 20px;
-      margin-left: 20px;
-    }
-  }
+      line-height: 1.45;
 
-  p {
-    font-size: 20px;
-    margin: 20px 0;
-    font-weight: 300;
-    b {
-      font-weight: 500;
-    }
-  }
-
-  &__back {
-    text-transform: uppercase;
-    font-size: 14px;
-    letter-spacing: 3px;
-    margin-bottom: 40px;
-    a {
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      &:before {
-        content: "";
-        background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAyMiAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIxIDdIMU0xIDdMNyAxTTEgN0w3IDEzIiBzdHJva2U9IiMzNDcwMzMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K");
-        display: block;
-        width: 36px;
-        height: 36px;
-        background-position: center;
-        background-repeat: no-repeat;
-        transition: all 0.3s ease-in-out;
+      b,
+      strong {
+        color: var(--color-black);
+        font-weight: 700;
       }
 
-      &:hover {
-        color: $color-green;
-        &:before {
-          transform: translateX(-8px);
+      ul {
+        gap: 8px;
+        margin: 8px 0 0 18px;
+        list-style: disc;
+
+        li {
+          font-size: 18px;
         }
       }
     }
   }
+}
 
-  &__more {
-    display: flex;
-    justify-content: center;
-    transition: all 0.3s ease-in-out;
-    img {
-      width: 225px;
+@include break-max($break-md) {
+  .case-header {
+    flex-direction: column;
+    gap: 0;
+    padding-top: 0;
+
+    &__links {
+      align-self: flex-end;
+      gap: 10px;
+      order: -1;
+      margin-top: 20px;
+      margin-bottom: 8px;
+      padding-top: 0;
     }
-    a {
-      &:hover {
-        transform: scale(1.1);
+
+    &__pill {
+      min-width: 96px;
+      padding: 6px 14px;
+      font-size: 14.4px;
+    }
+
+    .name-badge {
+      width: min(200px, 58vw);
+      margin-top: -16px;
+      margin-left: calc(var(--page-gutter) * -1);
+      padding: 56px 0 24px 12px;
+    }
+  }
+
+  .case-study {
+    padding: 28px 0 48px;
+
+    &__back {
+      margin-bottom: 36px;
+      font-size: 16px;
+    }
+
+    &__eyebrow {
+      font-size: 22px;
+    }
+
+    &__title {
+      font-size: clamp(28px, 8vw, 40px);
+    }
+
+    &__disciplines {
+      margin-bottom: 56px;
+      font-size: 16px;
+    }
+
+    &__section {
+      margin-bottom: 48px;
+
+      h2 {
+        font-size: 20px;
       }
+
+      > p {
+        margin-bottom: 20px;
+        font-size: 16px;
+      }
+    }
+
+    &__media {
+      flex-direction: column;
+      gap: 20px;
+      padding: 28px 16px;
+      border-radius: 16px;
+
+      &--split img {
+        width: 100%;
+        max-width: none;
+      }
+    }
+
+    &__cta {
+      margin-bottom: 36px;
+
+      a {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .site-footer {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+    font-size: 14.4px;
+
+    &__email img {
+      width: 18px;
+      height: 18px;
+    }
+
+    &__social img {
+      width: 16.2px;
+      height: 16.2px;
     }
   }
 }

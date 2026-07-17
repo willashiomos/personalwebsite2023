@@ -3,64 +3,126 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Willa Shiomos | Developer & Designer</title>
-    <link rel="icon" type="image/x-icon" href="../../favicon.ico" />
+    <title>Dreamland | Willa Shiomos</title>
+    <link rel="icon" type="image/x-icon" href="../images/etc/star-black.svg" />
     <meta
       name="description"
-      content="Hi, I’m Willa Shiomos, a software developer and designer in Brooklyn, NY. I currently build websites at Tank Design."
+      content="Case study: Dreamland — web design, UI, and branding for an online candle shop."
     />
   </head>
   <body>
-    <div class="container case-study">
-      <div class="case-study__back"><a href="/design">Back</a></div>
-      <div class="case-study__eyebrow">Case study</div>
-      <h1 class="case-study__title lovelace">Dreamland</h1>
-      <div class="case-study__intro">
-        <h2>Web Design | UI Design | Branding</h2>
-        <div class="case-study__intro__desc">
-          Design an online candle shop that is both stylish and uncomplicated,
-          appealing to both aesthetic cohesion and ease of use.
+    <header class="case-header">
+      <a class="name-badge" href="/" aria-label="Willa Shiomos home">
+        <div class="name-badge__container">
+          <img class="name-badge__star" src="../images/etc/star-black.svg" alt="" />
+          <span>Willa<br />Shiomos</span>
+          <img class="name-badge__star name-badge__star--right" src="../images/etc/star-black.svg" alt="" />
         </div>
+      </a>
+      <nav class="case-header__links" aria-label="Contact">
+        <a class="case-header__pill" href="mailto:willashiomos@gmail.com">Email</a>
+        <a
+          class="case-header__pill"
+          href="https://www.linkedin.com/in/willa-shiomos-a83319157/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+      </nav>
+    </header>
+
+    <main class="case-study">
+      <a class="case-study__back" href="/">
+        <img src="../images/etc/arrow-back.svg" alt="" />
+        Back to home
+      </a>
+
+      <p class="case-study__eyebrow">Case Study</p>
+      <h1 class="case-study__title">Dreamland</h1>
+      <p class="case-study__disciplines">Web Design | UI Design | Branding</p>
+
+      <section class="case-study__section">
+        <h2>Overview</h2>
+        <p>
+          Design an online candle shop that is both stylish and uncomplicated, appealing to both
+          aesthetic cohesion and ease of use.
+        </p>
+        <div class="case-study__media">
+          <img src="../images/case-studies/dreamland/main.png" alt="Dreamland homepage design" />
+        </div>
+      </section>
+
+      <section class="case-study__section">
+        <h2>Design principles</h2>
+        <ul>
+          <li>
+            <b>Clean</b> — show and say things in the simplest way possible without sacrificing
+            style or cohesion
+          </li>
+          <li>
+            <b>Universal</b> — design for human beings with different wants and needs
+          </li>
+          <li>
+            <b>Cohesive</b> — each part of the system aligns with the whole and contributes to the
+            larger system
+          </li>
+        </ul>
+        <div class="case-study__media">
+          <img
+            src="../images/case-studies/dreamland/small.png"
+            alt="Dreamland product and detail screens"
+          />
+        </div>
+      </section>
+
+      <section class="case-study__section">
+        <h2>Process</h2>
+        <p>I began by <b>wireframing</b> the site experience.</p>
+        <div class="case-study__media">
+          <img src="../images/case-studies/dreamland/wireframes.png" alt="Dreamland wireframes" />
+        </div>
+        <p>I then developed a <b>design system</b> to fit the objective and principles.</p>
+        <div class="case-study__media">
+          <img
+            src="../images/case-studies/dreamland/design-system.png"
+            alt="Dreamland design system"
+          />
+        </div>
+        <p>Part of this project involved developing a <b>chat bot</b> flow and interaction.</p>
+        <div class="case-study__media">
+          <img src="../images/case-studies/dreamland/chatbot.png" alt="Dreamland chatbot flow" />
+        </div>
+      </section>
+
+      <section class="case-study__section">
+        <h2>Full page</h2>
+        <div class="case-study__media">
+          <img src="../images/case-studies/dreamland/full.png" alt="Dreamland full page design" />
+        </div>
+      </section>
+
+      <div class="case-study__cta">
+        <img src="../images/etc/arrow-back.svg" alt="" />
+        <a href="/">Back to home</a>
       </div>
-      <img src="../images/case-studies/dreamland/main.png" />
-      <h3>Design principles</h3>
-      <ul>
-        <li>
-          <b>Clean</b> - show and say things in the simplest way possible
-          without sacrificing style or cohesion
-        </li>
-        <li>
-          <b>Universal</b> - design for human beings with different wants and
-          needs
-        </li>
-        <li>
-          <b>Cohesive</b> - each part of the system aligns with the whole and
-          contributes to the larger system
-        </li>
-      </ul>
-      <img src="../images/case-studies/dreamland/small.png" />
-      <h3>Process</h3>
-      <p>I began by <b>wireframing</b> the site experience.</p>
-      <img src="../images/case-studies/dreamland/wireframes.png" />
-      <p>
-        I then developed a <b>design system</b> to fit the objective and
-        principles.
-      </p>
-      <img src="../images/case-studies/dreamland/design-system.png" />
-      <p>
-        Part of this project involved developing a <b>chat bot</b> flow and
-        interaction.
-      </p>
-      <img src="../images/case-studies/dreamland/chatbot.png" />
-      <h3>Full page</h3>
-      <img src="../images/case-studies/dreamland/full.png" />
-      <div class="case-study__more">
-        <a href="/design"
-          ><img
-            src="../images/case-studies/more-projects.png"
-            alt="More projects"
-        /></a>
-      </div>
-    </div>
+    </main>
+
+    <footer class="site-footer">
+      <a class="site-footer__email" href="mailto:willashiomos@gmail.com">
+        <img src="../images/etc/star-black.svg" alt="" />
+        willashiomos@gmail.com
+        <img src="../images/etc/star-black.svg" alt="" />
+      </a>
+      <a
+        class="site-footer__social"
+        href="https://www.linkedin.com/in/willa-shiomos-a83319157/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        LinkedIn
+        <img src="../images/etc/arrow.png" alt="" />
+      </a>
+    </footer>
   </body>
 </html>

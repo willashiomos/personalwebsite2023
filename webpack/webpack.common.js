@@ -16,9 +16,18 @@ class CopyPublicPlugin {
   }
 }
 
+function getPageChunks(pagePath) {
+  const relativePath = Path.relative(Path.resolve(__dirname, '../src'), pagePath);
+  if (relativePath.startsWith(`case-studies${Path.sep}`)) {
+    return ['caseStudy'];
+  }
+  return ['app'];
+}
+
 module.exports = {
   entry: {
     app: Path.resolve(__dirname, '../src/scripts/index.js'),
+    caseStudy: Path.resolve(__dirname, '../src/scripts/case-study.js'),
   },
   output: {
     path: Path.join(__dirname, '../build'),
@@ -39,6 +48,7 @@ module.exports = {
       return new HtmlWebpackPlugin({
         template: page,
         filename: filename,
+        chunks: getPageChunks(page),
       });
     }),
 
@@ -58,6 +68,16 @@ module.exports = {
       {
         test: /\.html$/i,
         loader: 'html-loader',
+        options: {
+          sources: {
+            urlFilter: (attribute, value) => {
+              if (typeof value === 'string' && value.startsWith('/')) {
+                return false;
+              }
+              return true;
+            },
+          },
+        },
       },
       {
         test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
