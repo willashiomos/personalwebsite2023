@@ -48,9 +48,8 @@
   display: flex;
   align-items: center;
   width: 240px;
-  margin-top: -40px;
-  margin-left: clamp(-24px, calc(var(--page-gutter) * -0.35), -8px);
-  padding: 56px 8px 28px 12px;
+  margin: 0;
+  padding: 0 0 12px 20px;
   color: #000;
   font-family: "PP Neue Montreal", "Helvetica Now", sans-serif;
   text-decoration: none;
@@ -60,10 +59,10 @@
 
   &::before {
     position: absolute;
-    top: -20%;
-    left: -35%;
-    width: 155%;
-    aspect-ratio: 1;
+    top: -134px;
+    left: 0;
+    width: 240px;
+    height: 240px;
     pointer-events: none;
     content: "";
     border: 1px solid #000;
@@ -74,31 +73,32 @@
     position: relative;
     z-index: 1;
     display: flex;
-    gap: 1.6cqi;
+    gap: 6px;
     align-items: flex-start;
-    width: 88%;
+    width: auto;
+    max-width: 200px;
   }
 
   &__star {
     flex-shrink: 0;
-    width: 8.5cqi;
-    margin-top: 2.5cqi;
-    height: 8.5cqi;
+    width: 19px;
+    height: 19px;
+    margin-top: 6px;
     object-fit: contain;
 
     &--right {
       align-self: flex-end;
       margin-top: 0;
-      margin-bottom: 2.5cqi;
+      margin-bottom: 4px;
     }
   }
 
   span {
-    flex: 1 1 auto;
-    font-size: 15cqi;
+    flex: 0 1 auto;
+    font-size: 28px;
     font-weight: 700;
-    line-height: 0.9;
-    letter-spacing: 0.045em;
+    line-height: 0.95;
+    letter-spacing: 0.02em;
   }
 }
 
@@ -162,7 +162,7 @@
 .case-study {
   width: min(calc(100% - (var(--page-gutter) * 2)), var(--page-width));
   margin: 0 auto;
-  padding: 48px 0 64px;
+  padding: 100px 0 64px;
   color: var(--color-black);
 
   &__back {
@@ -173,25 +173,30 @@
     color: #000;
     font-size: 18px;
     line-height: 1.2;
-    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
 
     img {
       display: block;
       width: 15px;
       height: 12px;
       flex-shrink: 0;
+      transition: transform 0.3s ease-in-out;
     }
 
     &:hover {
-      opacity: 0.7;
+      img {
+        transform: translateX(-2px);
+      }
     }
   }
 
   &__eyebrow {
-    margin: 0 0 12px;
+    margin: 0 0 20px;
     font-family: var(--font-family);
     font-size: 28px;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 1.2;
   }
 
@@ -206,11 +211,32 @@
   }
 
   &__disciplines {
-    margin: 0 0 96px;
+    margin: 0 0 50px;
     color: var(--color-secondary);
     font-size: 20px;
     font-weight: 400;
     line-height: 1.4;
+  }
+
+  &__intro {
+    margin: 0 0 48px;
+    color: var(--color-secondary);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.45;
+    text-wrap: pretty;
+  }
+
+  &__screens {
+    margin: 0 0 40px;
+    font-family: var(--font-family);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  &__cover {
+    margin-bottom: 50px;
   }
 
   &__section {
@@ -228,13 +254,21 @@
       line-height: 1.2;
     }
 
+    h3 {
+      margin: 0 0 8px;
+      font-family: var(--font-family);
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
     > p {
-      max-width: 72ch;
       margin: 0 0 28px;
       color: var(--color-secondary);
       font-size: 20px;
       font-weight: 400;
       line-height: 1.45;
+      text-wrap: pretty;
 
       b,
       strong {
@@ -249,10 +283,7 @@
     gap: 24px;
     align-items: center;
     justify-content: center;
-    padding: 48px 40px;
     overflow: hidden;
-    background: linear-gradient(160deg, #2a2a2a 0%, #4a1f24 55%, #6b1e28 100%);
-    border-radius: 20px;
 
     img {
       display: block;
@@ -261,25 +292,18 @@
       height: auto;
       margin: 0;
       object-fit: contain;
-      border-radius: 8px;
-      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.35);
     }
 
     &--split {
       img {
         flex: 1 1 0;
         width: calc(50% - 12px);
-        max-width: 560px;
       }
     }
 
     &--stack {
       flex-direction: column;
       gap: 28px;
-
-      img {
-        width: min(100%, 980px);
-      }
     }
   }
 
@@ -289,32 +313,34 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 48px;
-
+    padding: 10px 22px;
+    color: #000;
+    font-size: 18px;
+    line-height: 1.2;
+    border: 1px solid #000;
+    border-radius: 74px;
+    transition: background 0.3s ease-in-out;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    a {
+      text-decoration: none;
+    }
     img {
       display: block;
       width: 15px;
       height: 12px;
       flex-shrink: 0;
+      transition: all 0.3s ease-in-out;
     }
 
-    a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 180px;
-      padding: 10px 22px;
-      color: #000;
-      font-size: 18px;
-      line-height: 1.2;
-      text-decoration: none;
-      border: 1px solid #000;
-      border-radius: 74px;
-      transition: color 0.3s, background 0.3s;
+    &:hover,
+    &:focus {
+      color: var(--color-white);
+      background: var(--color-black);
 
-      &:hover,
-      &:focus {
-        color: var(--color-white);
-        background: var(--color-black);
+      img {
+        filter: brightness(0) invert(1);
       }
     }
   }
@@ -375,10 +401,35 @@
     }
 
     .name-badge {
-      width: min(200px, 58vw);
-      margin-top: -16px;
-      margin-left: calc(var(--page-gutter) * -1);
-      padding: 56px 0 24px 12px;
+      width: 180px;
+      padding: 0 0 8px 10px;
+
+      &::before {
+        top: -130px;
+        left: -8px;
+        width: 180px;
+        height: 180px;
+      }
+
+      &__container {
+        max-width: 150px;
+        gap: 4px;
+        transform: translateY(-18px);
+      }
+
+      &__star {
+        width: 14px;
+        height: 14px;
+        margin-top: 4px;
+
+        &--right {
+          margin-bottom: 2px;
+        }
+      }
+
+      span {
+        font-size: 20px;
+      }
     }
   }
 
@@ -399,12 +450,30 @@
     }
 
     &__disciplines {
-      margin-bottom: 56px;
+      margin-bottom: 20px;
       font-size: 16px;
     }
 
+    &__intro {
+      margin-bottom: 36px;
+      font-size: 16px;
+    }
+
+    &__screens {
+      margin-bottom: 28px;
+      font-size: 20px;
+    }
+
+    &__cover {
+      margin-bottom: 30px;
+    }
+
     &__section {
-      margin-bottom: 48px;
+      margin-bottom: 40px;
+
+      &:last-of-type {
+        margin-bottom: 60px;
+      }
 
       h2 {
         font-size: 20px;
@@ -419,8 +488,6 @@
     &__media {
       flex-direction: column;
       gap: 20px;
-      padding: 28px 16px;
-      border-radius: 16px;
 
       &--split img {
         width: 100%;
@@ -429,7 +496,7 @@
     }
 
     &__cta {
-      margin-bottom: 36px;
+      margin-bottom: 0;
 
       a {
         font-size: 16px;
@@ -438,7 +505,6 @@
   }
 
   .site-footer {
-    flex-direction: column;
     gap: 16px;
     align-items: flex-start;
     font-size: 14.4px;
