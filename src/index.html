@@ -13,8 +13,11 @@
   <body>
     <header class="hero" aria-labelledby="intro-title">
       <a class="name-badge" href="/" aria-label="Willa Shiomos home">
-        <img class="name-badge__star" src="./images/etc/star-black.svg" alt="" />
-        <span>Willa<br />Shiomos</span>
+        <div class="name-badge__container">
+          <img class="name-badge__star" src="./images/etc/star-black.svg" alt="" />
+          <span>Willa<br />Shiomos</span>
+          <img class="name-badge__star name-badge__star--right" src="./images/etc/star-black.svg" alt="" />
+        </div>
       </a>
 
       <nav class="hero__links" aria-label="Contact">
@@ -42,9 +45,20 @@
         <h2 class="sr-only" id="work-title">Selected work</h2>
 
         <nav class="filters" aria-label="Project categories">
-          <a class="filters__link filters__link--active" href="/">All</a>
-          <a class="filters__link" href="/">Development</a>
-          <a class="filters__link" href="/design">Design</a>
+          <button type="button" class="filters__link filters__link--active" data-filter="all" aria-pressed="true">
+            All
+          </button>
+          <button
+            type="button"
+            class="filters__link"
+            data-filter="development"
+            aria-pressed="false"
+          >
+            Development
+          </button>
+          <button type="button" class="filters__link" data-filter="design" aria-pressed="false">
+            Design
+          </button>
         </nav>
 
         <div class="work-list">
@@ -188,7 +202,9 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="./images/cover-photos/cover-longpoint.png" alt="Longpoint website preview" />
+            <video class="project-row__media-video" width="470" height="255" poster="./images/cover-photos/cover-longpoint.png" autoplay="" loop="" playsinline="" muted="" style="translate: none; rotate: none; scale: none; transform: translate(-5%, 0.0476%) translate3d(0px, 0px, 0px);">
+              <source src="https://player.vimeo.com/progressive_redirect/playback/1071210738/rendition/1080p/file.mp4?loc=external&amp;signature=8654a8e73c1195f5b87ea12db97b501adb9e94440b31194f1afe607147d1015d" type="video/mp4">
+            </video>
             </a>
           </article>
 
