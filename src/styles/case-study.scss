@@ -219,7 +219,7 @@
   }
 
   &__intro {
-    margin: 0 0 48px;
+    margin: 0 40px 48px;
     color: var(--color-secondary);
     font-size: 20px;
     font-weight: 400;
@@ -228,7 +228,7 @@
   }
 
   &__screens {
-    margin: 0 0 40px;
+    margin: 0 40px 40px;
     font-family: var(--font-family);
     font-size: 24px;
     font-weight: 700;
@@ -237,10 +237,10 @@
 
   &__cover {
     display: block;
-    width: 100%;
+    width: stretch;
     max-width: 100%;
     height: auto;
-    margin: 0 0 80px;
+    margin: 0 40px 80px;
     object-fit: contain;
     opacity: 0;
     transform: translateY(40px);
@@ -255,7 +255,7 @@
   }
 
   &__section {
-    margin-bottom: 72px;
+    margin: 0 40px 72px;
 
     &:last-of-type {
       margin-bottom: 80px;
@@ -506,21 +506,21 @@
     }
 
     &__intro {
-      margin-bottom: 36px;
+      margin: 0 20px 36px;
       font-size: 16px;
     }
 
     &__screens {
-      margin-bottom: 28px;
+      margin: 0 20px 28px;
       font-size: 20px;
     }
 
     &__cover {
-      margin-bottom: 30px;
+      margin: 0 20px 30px;
     }
 
     &__section {
-      margin-bottom: 40px;
+      margin: 0 20px 40px;
 
       &:last-of-type {
         margin-bottom: 60px;

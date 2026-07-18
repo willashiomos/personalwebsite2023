@@ -32,6 +32,32 @@ function initProjectRowScrollAnimation() {
   }
 }
 
+function initProjectVideoLoading() {
+  const videos = document.querySelectorAll(".project-row__media-video");
+  if (!videos.length || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const video = entry.target;
+        const source = video.querySelector("source[data-src]");
+        if (source) {
+          source.src = source.dataset.src;
+          source.removeAttribute("data-src");
+          video.load();
+          video.play().catch(() => {});
+        }
+        observer.unobserve(video);
+      });
+    },
+    { rootMargin: "300px 0px", threshold: 0.01 }
+  );
+
+  videos.forEach((video) => observer.observe(video));
+}
+
 function getProjectCategories(row) {
   const meta = row.querySelector(".project-row__meta > span");
   if (!meta) return [];
@@ -85,4 +111,5 @@ function initProjectFilters() {
 }
 
 initProjectRowScrollAnimation();
+initProjectVideoLoading();
 initProjectFilters();
