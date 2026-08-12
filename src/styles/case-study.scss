@@ -208,6 +208,24 @@
     line-height: 1;
     letter-spacing: 0.02em;
     text-transform: uppercase;
+
+    &-container {
+      display: flex;
+      gap: 20px 10px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+
+      h1 {
+        margin: 0;
+      }
+
+      @include break-max($break-md) {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 30px;
+      }
+    }
   }
 
   &__disciplines {
@@ -277,7 +295,7 @@
       line-height: 1.2;
     }
 
-    > p {
+    >p {
       margin: 0 0 28px;
       color: var(--color-secondary);
       font-size: 20px;
@@ -353,9 +371,11 @@
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
+
     a {
       text-decoration: none;
     }
+
     img {
       display: block;
       width: 15px;
@@ -372,6 +392,42 @@
       img {
         filter: brightness(0) invert(1);
       }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 22px;
+    color: #000;
+    font-size: 18px;
+    line-height: 1.2;
+    border: 1px solid #000;
+    border-radius: 74px;
+    transition: background 0.3s ease-in-out;
+    width: fit-content;
+
+    img {
+      transition: transform 0.3s ease-in-out;
+      width: 24px;
+    }
+
+    &:hover {
+      color: var(--color-white);
+      background: var(--color-black);
+
+      img {
+        transform: translateX(2px);
+        filter: brightness(0) invert(1);
+      }
+    }
+
+    @include break-max($break-md) {
+      font-size: 16px;
+      padding: 8px 18px;
     }
   }
 
@@ -411,6 +467,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .case-study {
+
     &__cover,
     &__media {
       opacity: 1;
@@ -530,7 +587,7 @@
         font-size: 20px;
       }
 
-      > p {
+      >p {
         margin-bottom: 20px;
         font-size: 16px;
       }
